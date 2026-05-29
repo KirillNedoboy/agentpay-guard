@@ -149,12 +149,18 @@ The MVP does not include live Circle API calls, wallet signing, private keys, au
 
 Potential next steps after the proof pack:
 
-1. Capture final screenshots and publish the GitHub repository.
+1. Deploy the demo behind a public URL or attach a short demo GIF to the README.
 2. Add a buyer-side adapter for a real x402 / Circle Gateway flow.
 3. Add an operator review queue for `REVIEW` decisions.
 4. Add policy editing and exportable audit reports.
 5. Add webhook examples for agent frameworks.
 6. Add optional audit hash anchoring.
+
+Submission copy is prepared in `docs/submission-pack.md` for:
+
+- Arc builder post;
+- Circle Grants draft;
+- Stablecoins / Programmable Money submission angle.
 
 Live payment integration is future work, not part of the current MVP.
 

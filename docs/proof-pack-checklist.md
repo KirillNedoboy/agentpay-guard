@@ -2,7 +2,7 @@
 
 ## Repository
 
-- [ ] GitHub repo ready
+- [x] GitHub repo ready
 - [x] README complete
 - [x] local demo runs
 - [x] tests pass

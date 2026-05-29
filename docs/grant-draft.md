@@ -82,7 +82,7 @@ Status: complete.
 - Screenshot checklist and captured screenshots.
 - GitHub repository publication.
 
-Status: documentation prepared; screenshots and publication pending.
+Status: complete. Repository is public, screenshots are captured, and submission copy is prepared in `docs/submission-pack.md`.
 
 ### Milestone 3 - Rail Adapter Prototype
 
