@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# build outputs
+.next/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+debug.log
+debug-*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
+# local generated audit log can be kept or reset deliberately
+# data/audit-log.jsonl

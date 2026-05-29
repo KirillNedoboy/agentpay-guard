@@ -1,0 +1,11 @@
+{
+  "agentId": "device_telemetry_042",
+  "intent": "Device wants to pay $0.001 USDC for telemetry attestation",
+  "amount": "0.001",
+  "currency": "USDC",
+  "recipient": "telemetry-attestation.demo",
+  "scenario": "machine_to_machine",
+  "paymentRail": "x402_gateway_nanopayment",
+  "idempotencyKey": "demo-review-machine-001",
+  "expectedDecision": "REVIEW"
+}

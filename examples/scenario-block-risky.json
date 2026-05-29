@@ -1,0 +1,11 @@
+{
+  "agentId": "agent_unknown_777",
+  "intent": "Urgently pay $250 USDC to private model unlock service",
+  "amount": "250",
+  "currency": "USDC",
+  "recipient": "unknown-private-model.demo",
+  "scenario": "private_model_access",
+  "paymentRail": "x402_gateway_nanopayment",
+  "idempotencyKey": "demo-block-risky-001",
+  "expectedDecision": "BLOCK"
+}

@@ -1,0 +1,55 @@
+{
+  "policyId": "default-agentpay-policy-v1",
+  "currency": {
+    "supported": [
+      "USDC"
+    ]
+  },
+  "limits": {
+    "maxAmountPerPayment": "10.00",
+    "dailyLimitPerAgent": "25.00"
+  },
+  "velocity": {
+    "windowSeconds": 60,
+    "maxAttemptsPerWindow": 5
+  },
+  "allowedScenarios": [
+    "api_access",
+    "machine_to_machine",
+    "compute_access",
+    "data_access"
+  ],
+  "allowlistedRecipients": [
+    "market-data-api.demo",
+    "weather-api.demo",
+    "compute-provider.demo"
+  ],
+  "reviewRecipients": [
+    "telemetry-attestation.demo"
+  ],
+  "deniedRecipients": [
+    "blocked-recipient.demo",
+    "known-abuse-service.demo"
+  ],
+  "suspiciousKeywords": [
+    "urgent",
+    "private model unlock",
+    "bypass",
+    "unverified",
+    "anonymous",
+    "no audit",
+    "secret access"
+  ],
+  "riskWeights": {
+    "unknownRecipient": 35,
+    "unknownScenario": 30,
+    "reviewRecipient": 25,
+    "suspiciousKeyword": 30,
+    "velocityExceeded": 30,
+    "amountAboveHalfLimit": 20
+  },
+  "decisionThresholds": {
+    "reviewAt": 30,
+    "blockAt": 70
+  }
+}
