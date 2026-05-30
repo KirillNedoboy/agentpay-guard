@@ -1,0 +1,430 @@
+1
+00:00:00,000 --> 00:00:01,350
+AgentPay Guard - live proof
+
+2
+00:00:01,350 --> 00:00:02,700
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+
+3
+00:00:02,700 --> 00:00:04,050
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+
+4
+00:00:04,050 --> 00:00:05,400
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+
+5
+00:00:05,400 --> 00:00:06,750
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+
+6
+00:00:06,750 --> 00:00:08,099
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+
+7
+00:00:08,099 --> 00:00:09,449
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+
+8
+00:00:09,449 --> 00:00:10,799
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+
+9
+00:00:10,799 --> 00:00:12,149
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+
+10
+00:00:12,149 --> 00:00:13,499
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+
+11
+00:00:13,499 --> 00:00:14,849
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+
+12
+00:00:14,849 --> 00:00:16,199
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+
+13
+00:00:16,199 --> 00:00:17,550
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+
+14
+00:00:17,550 --> 00:00:18,900
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+
+15
+00:00:18,900 --> 00:00:20,250
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+
+16
+00:00:20,250 --> 00:00:21,600
+AgentPay Guard - live proof
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+
+17
+00:00:21,600 --> 00:00:22,950
+Preflight policy + audit layer for AI-agent payments
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+
+18
+00:00:22,950 --> 00:00:24,300
+Real service, API calls, and tests below
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+
+19
+00:00:24,300 --> 00:00:25,650
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+
+20
+00:00:25,650 --> 00:00:27,000
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+
+21
+00:00:27,000 --> 00:00:28,350
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+
+22
+00:00:28,350 --> 00:00:29,700
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+
+23
+00:00:29,700 --> 00:00:31,050
+active
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+ RUN  v3.2.1 /root/projects/agentpay-guard
+
+24
+00:00:31,050 --> 00:00:32,400
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+ RUN  v3.2.1 /root/projects/agentpay-guard
+ ✓ tests/policy-engine.test.ts (16 tests) 22ms
+
+25
+00:00:32,400 --> 00:00:33,750
+/ -&gt; HTTP 200
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+ RUN  v3.2.1 /root/projects/agentpay-guard
+ ✓ tests/policy-engine.test.ts (16 tests) 22ms
+ ✓ tests/api-safe-failure.test.ts (1 test) 6ms
+
+26
+00:00:33,750 --> 00:00:35,100
+$ curl -s -o /dev/null -w &quot;%{http_code}&quot; http://127.0.0.1:3001/api/audit-log
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+ RUN  v3.2.1 /root/projects/agentpay-guard
+ ✓ tests/policy-engine.test.ts (16 tests) 22ms
+ ✓ tests/api-safe-failure.test.ts (1 test) 6ms
+ ✓ tests/audit-log.test.ts (2 tests) 24ms
+
+27
+00:00:35,100 --> 00:00:36,450
+/api/audit-log -&gt; HTTP 200
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+ RUN  v3.2.1 /root/projects/agentpay-guard
+ ✓ tests/policy-engine.test.ts (16 tests) 22ms
+ ✓ tests/api-safe-failure.test.ts (1 test) 6ms
+ ✓ tests/audit-log.test.ts (2 tests) 24ms
+ Test Files  3 passed (3)
+
+28
+00:00:36,450 --> 00:00:37,800
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+ RUN  v3.2.1 /root/projects/agentpay-guard
+ ✓ tests/policy-engine.test.ts (16 tests) 22ms
+ ✓ tests/api-safe-failure.test.ts (1 test) 6ms
+ ✓ tests/audit-log.test.ts (2 tests) 24ms
+ Test Files  3 passed (3)
+      Tests  19 passed (19)
+
+29
+00:00:37,800 --> 00:00:39,150
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate &lt; examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+ RUN  v3.2.1 /root/projects/agentpay-guard
+ ✓ tests/policy-engine.test.ts (16 tests) 22ms
+ ✓ tests/api-safe-failure.test.ts (1 test) 6ms
+ ✓ tests/audit-log.test.ts (2 tests) 24ms
+ Test Files  3 passed (3)
+      Tests  19 passed (19)
+exit_code=0

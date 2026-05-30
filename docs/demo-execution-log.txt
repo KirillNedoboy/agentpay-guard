@@ -1,0 +1,26 @@
+$ cd /root/projects/agentpay-guard
+$ git rev-parse --short HEAD
+d11ec30
+$ systemctl is-active agentpay-guard.service
+active
+$ curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:3001/
+/ -> HTTP 200
+$ curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:3001/api/audit-log
+/api/audit-log -> HTTP 200
+$ POST /api/payment-intents/evaluate < examples/scenario-allow-api.json
+HTTP 200 decision=ALLOW riskScore=10 auditId=audit_20260527_000001
+reason: Recipient is allowlisted, amount is below limits, and scenario is allowed.
+$ POST /api/payment-intents/evaluate < examples/scenario-review-machine.json
+HTTP 200 decision=REVIEW riskScore=35 auditId=audit_20260527_000003
+reason: Recipient requires operator review.
+$ POST /api/payment-intents/evaluate < examples/scenario-block-risky.json
+HTTP 200 decision=BLOCK riskScore=100 auditId=audit_20260527_000002
+reason: Recipient is not allowlisted. Scenario is not in the allowed scenario list. Amount is above the hard max per payment. Agent daily spend limi
+$ pnpm test
+ RUN  v3.2.1 /root/projects/agentpay-guard
+ ✓ tests/policy-engine.test.ts (16 tests) 22ms
+ ✓ tests/api-safe-failure.test.ts (1 test) 6ms
+ ✓ tests/audit-log.test.ts (2 tests) 24ms
+ Test Files  3 passed (3)
+      Tests  19 passed (19)
+exit_code=0
