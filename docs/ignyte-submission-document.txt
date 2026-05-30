@@ -79,7 +79,7 @@ Repository:
 https://github.com/KirillNedoboy/agentpay-guard
 
 Verified commit:
-`6473de8059823b98cbd0b122766fcfb9ca2cd077`
+`9810df8b932ee860af053a43a4ae72f19fac50ae`
 
 Demo video artifact:
 `docs/agentpay-guard-demo.mp4`
